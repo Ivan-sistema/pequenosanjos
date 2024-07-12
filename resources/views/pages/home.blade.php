@@ -3,11 +3,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Instituto Pequenos Anjos</title>
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         <title>{{ config('app.name', 'Laravel') }}</title>
-        <!-- Scripts -->
+        {{-- <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+
 
 
     </head>
