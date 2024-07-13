@@ -34,3 +34,11 @@
             margin: 0;
         }
     }
+.copy{
+    background: var(--global-secondary-color);
+    height: 95px;
+    span{
+        color: var(--global-white-color);
+        font-weight: 300;
+    }
+}
