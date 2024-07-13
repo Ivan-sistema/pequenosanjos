@@ -41,11 +41,12 @@
                     </div>
                 </div>
                 </div>
-                <div class="container d-flex  pt-5">
-                    <div class="row gx-5">                    <div class="col">
-                        <h2>MISSÃO</h2>
-                        <P>Temos como objetivo atender Pacientes que vem de outros Estados tratar do Câncer e outras doenças.</P>
-                    </div>
+                <div class="container d-flex pt-5">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <h2>MISSÃO</h2>
+                            <P>Temos como objetivo atender Pacientes que vem de outros Estados tratar do Câncer e outras doenças.</P>
+                        </div>
                     <div class="col">
                         <h2>VISÃO</h2>
                         <p>Dar apoio e acolhimento para a recuperação dos Adultos e Crianças.</p>
@@ -66,7 +67,7 @@
 
             <div class="section helpme">
                 <div class="container d-flex">
-                    <div class=" ">
+                    <div class="row">
                         <div class="col-12 d-flex align-items-center justify-content-center text-center py-5 row w-100 d-flex">
                             <h2 class="white">NOS AJUDE A FAZER A DIFERENÇA</h2>
                             <h4 class="white">(11) 2446-0408 | (11) 99649-0545</h4>
@@ -78,6 +79,21 @@
                 </div>
             </div>
         </main>
-
+<div class="section parceiros">
+    <div class="container d-flex py-5">
+                    <div class="row gx-5">
+            <div class="col">
+                <h2>NOSSOS PARCEIROS</h2>
+                <p>Os Parceiros do Instituto Pequenos Anjos, nos ajudam a manter a casa funcionando
+                     e atendendo a quem precisa durante o ano.</p>
+                     <p>Você ou sua Empresa também pode fazer parte dos Parceiros e Colaboradores Entre em Contato Conosco</p>
+            </div>
+            <div class="col d-flex justify-content-center align-items-center  ">
+                <div class="btn  btn-lg  btn-blue">SER PARCEIRO</div>
+            </div>
+        </div>
+    </div>
+</div>
+<x-slider-parceiros/>
     </body>
 </html>
