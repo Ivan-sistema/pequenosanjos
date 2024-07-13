@@ -95,5 +95,109 @@
     </div>
 </div>
 <x-slider-parceiros/>
+<div class="section contato">
+    <div class="container-fluid">
+        <div class="row w-100">
+            <div class="col"><img src="{{asset('assets/images/bg-contato.jpg') }}" class="card-img-top" alt="...">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row d-flex py-5 align-items-center justify-content-center text-center">
+            <div class="box d-flex align-items-center justify-content-center text-center">
+                <h2>CONTATO</h2>
+            </div>
+        </div>
+        <div class="row py-5 ">
+            <div class="col">
+                <a href="acebook.com/InstitutoPequenosAnjos/" target="_blank">
+                    <div class="box d-flex flex-column  justify-content-center"  style="height: 100px">
+                        <a href="#" title=""><i class="bi bi-facebook"></i></a>
+                        <span>@institutopequenosanjos</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.instagram.com/doacaoinstitutopequenosanjos/" target="_blank">
+                    <div class="box d-flex flex-column  justify-content-center" style="height: 100px">
+                        <a href="#" title=""><i class="bi bi-instagram"></i></a>
+                        <span>@doacaoinstitutopequenosanjos</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.youtube.com/channel/UCp1Val8w-T01s4YRGIcfP6w" target="_blank">
+                    <div class="box d-flex flex-column  justify-content-center" style="height: 100px">
+                        <a href="#" title=""><i class="bi bi-youtube"></i></a>
+                        <span>@institutopequenosanjos</span>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://api.whatsapp.com/send?phone=5511996490545">
+                    <div class="box d-flex flex-column  justify-content-center" style="height: 100px">
+                        <a href="#" title=""><i class="bi bi-whatsapp"></i></a>
+                        <span>(11) 2446-0408</span>
+                        <span>(11) 99649-0545</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.301862050149!2d-46.47348631294131!3d-23.449573603016333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce8a79daf697a7%3A0x1eed406507b22916!2sRua%202%C2%BA%20Tenente%20Aviador%20M%C3%A1rio%20L.%20Figueiroa%2C%20212%20-%20Cidade%20Jardim%20Cumbica%2C%20Guarulhos%20-%20SP%2C%2007181-060!5e0!3m2!1spt-BR!2sbr!4v1720843490840!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <form method="POST" action="contact_action">
+                    @csrf
+                    <div class="input-group mb-3">
+                        <input type="text" value="" name="nome" class="form-control" placeholder="Nome:" aria-label="nome" aria-describedby="nome">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" value="" name="email" placeholder="Email:" aria-label="email" aria-describedby="email">
+                    </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control me-1" value="" name="telefone" placeholder="Telefone:" aria-label="Telefone">
+                    <input type="text" class="form-control" value="" name="whatsapp" placeholder="Whatsapp:" aria-label="Whatsapp">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" value="" name="assunto" placeholder="Assunto:" aria-label="assunto" aria-describedby="assunto">
+                </div>
+                <div class="input-group mb-3">
+                    <textarea name="descricao" value="" class="form-control" placeholder="Descrição" style="height: 300px">
+
+                    </textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-blue">Enviar</button>
+                  </div>
+
+                </form>
+            </div>
+            <div class="col atendimento">
+                <h3>ATENDIMENTO</h3>
+                <p>De Segunda a Sexta<br/>
+                das 8hs às 18 hs</p>
+                <h3 class="py-3">CONTATO</h3>
+                <p>contato@pequenosanjos.com.br</p>
+                <p>(11) 2446-0408</p>
+                <p>(11) 99649-0545</p>
+
+            </div>
+        </div>
+    </div>
+</div>
     </body>
 </html>
+
+
+
+
