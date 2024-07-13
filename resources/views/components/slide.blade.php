@@ -7,7 +7,7 @@
     >
         <div class="container slide slide-heading">
             <div class="row d-flex ">
-                <div class="col-6 heading">
+                <div class="col-xs-12 col-md-12 col-lg-6 heading">
                     <h2>INSTITUTO <br/>
                         PEQUENOS ANJOS</h2>
                     <h4>Cuidando de Crianças com Amor</h4>
@@ -15,11 +15,11 @@
                     Social em prol da solidariedade.</p>
                     <button class="btn btn-lg btn-blue">Saiba +</button>
                 </div>
-                <div class="col-6 d-flex flex-column align-items-end justify-content-between icons-social">
-                    <a href="#" title=""><i class="bi bi-facebook"></i></a>
-                    <a href="#" title=""><i class="bi bi-instagram"></i></a>
-                    <a href="#" title=""><i class="bi bi-youtube"></i></a>
-                    <a href="#" title=""><i class="bi bi-whatsapp"></i></a>
+                <div class="col-xs-12 col-md-12 col-lg-6 d-flex flex-lg-column flex-md-row align-items-end justify-content-lg-between justify-content-md-center icons-social">
+                    <a href="#" title=""><i class="bi bi-facebook  me-3"></i></a>
+                    <a href="#" title=""><i class="bi bi-instagram me-3"></i></a>
+                    <a href="#" title=""><i class="bi bi-youtube me-3"></i></a>
+                    <a href="#" title=""><i class="bi bi-whatsapp me-3"></i></a>
                 </div>
             </div>
         </div>

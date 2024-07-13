@@ -5,10 +5,6 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         <title>{{ config('app.name', 'Laravel') }}</title>
-        {{-- <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 
 
 
@@ -21,7 +17,7 @@
             <div class="section o-instituto pY-5">
                 <div class="container d-flex">
                     <div class="row  gx-5">
-                    <div class="col-6">
+                    <div class="col-lg-6 col-md-12">
                        <h2>O INSTITUTO<br/>
                             PEQUENOS ANJOS </h2>
                             <p>O Instituto Luta Pela Vida Pequenos Anjos é uma instituição não Governamental Sem Fins Lucrativos.
@@ -32,7 +28,7 @@
                                 <p>Precisamos de ajuda para manter nossa Casa de Apoio funcionando.</p>
                                 <p>Mas isso só será possível se tivermos sua solidariedade, pois o Brasil está em crise, imagina pra quem não tem recurso e nem saúde é muito pior.</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6 col-md-12">
                         <img src="{{asset('assets/images/instituto.png') }}" class="img-fluid mx-auto d-block mb-4" alt="{{ config('app.name', 'Laravel') }}">
                         <div class="info mx-auto">
                             <p>Venha nos visitar e conhecer o Instituto Luta Pela Vida Pequenos Anjos.</p>
@@ -43,15 +39,15 @@
                 </div>
                 <div class="container d-flex pt-5">
                     <div class="row gx-5">
-                        <div class="col">
+                        <div class="col-lg-4 col-md-12">
                             <h2>MISSÃO</h2>
                             <P>Temos como objetivo atender Pacientes que vem de outros Estados tratar do Câncer e outras doenças.</P>
                         </div>
-                    <div class="col">
+                    <div class="col-lg-4 col-md-12">
                         <h2>VISÃO</h2>
                         <p>Dar apoio e acolhimento para a recuperação dos Adultos e Crianças.</p>
                     </div>
-                    <div class="col">
+                    <div class="col-lg-4 col-md-12">
                         <h2>VALORES</h2>
                         <ul>
                             <li>Solidariedade</li>
@@ -73,7 +69,7 @@
                             <h4 class="white">(11) 2446-0408 | (11) 99649-0545</h4>
                         </div>
                         <div class="col-12 d-flex align-items-center justify-content-center">
-                            <iframe width="70%" height="600" src="https://www.youtube.com/embed/gUYvp9b0qF0" title="Instituto Pequenos Anjos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <iframe class="video" src="https://www.youtube.com/embed/gUYvp9b0qF0" title="Instituto Pequenos Anjos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -82,13 +78,13 @@
 <div class="section parceiros">
     <div class="container d-flex py-5">
                     <div class="row gx-5">
-            <div class="col">
+            <div class="col-lg-6 col-md-12">
                 <h2>NOSSOS PARCEIROS</h2>
                 <p>Os Parceiros do Instituto Pequenos Anjos, nos ajudam a manter a casa funcionando
                      e atendendo a quem precisa durante o ano.</p>
                      <p>Você ou sua Empresa também pode fazer parte dos Parceiros e Colaboradores Entre em Contato Conosco</p>
             </div>
-            <div class="col d-flex justify-content-center align-items-center  ">
+            <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center  ">
                 <div class="btn  btn-lg  btn-blue">SER PARCEIRO</div>
             </div>
         </div>
@@ -98,7 +94,7 @@
 <div class="section contato">
     <div class="container-fluid">
         <div class="row w-100">
-            <div class="col"><img src="{{asset('assets/images/bg-contato.jpg') }}" class="card-img-top" alt="...">
+            <div class="col  col-md-12"><img src="{{asset('assets/images/bg-contato.jpg') }}" class="card-img-top" alt="...">
             </div>
         </div>
     </div>
@@ -109,7 +105,7 @@
             </div>
         </div>
         <div class="row py-5 ">
-            <div class="col">
+            <div class="col-lg-3 col-md-12">
                 <a href="acebook.com/InstitutoPequenosAnjos/" target="_blank">
                     <div class="box d-flex flex-column  justify-content-center"  style="height: 100px">
                         <a href="#" title=""><i class="bi bi-facebook"></i></a>
@@ -117,7 +113,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-12">
                 <a href="https://www.instagram.com/doacaoinstitutopequenosanjos/" target="_blank">
                     <div class="box d-flex flex-column  justify-content-center" style="height: 100px">
                         <a href="#" title=""><i class="bi bi-instagram"></i></a>
@@ -125,7 +121,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-12">
                 <a href="https://www.youtube.com/channel/UCp1Val8w-T01s4YRGIcfP6w" target="_blank">
                     <div class="box d-flex flex-column  justify-content-center" style="height: 100px">
                         <a href="#" title=""><i class="bi bi-youtube"></i></a>
@@ -133,7 +129,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col">
+            <div class="col-lg-3 col-md-12">
                 <a href="https://api.whatsapp.com/send?phone=5511996490545">
                     <div class="box d-flex flex-column  justify-content-center" style="height: 100px">
                         <a href="#" title=""><i class="bi bi-whatsapp"></i></a>
@@ -152,7 +148,7 @@
 
     <div class="container py-5">
         <div class="row">
-            <div class="col">
+            <div class="col-lg-6 col-md-12">
                 <form method="POST" action="contact_action">
                     @csrf
                     <div class="input-group mb-3">
@@ -182,7 +178,7 @@
 
                 </form>
             </div>
-            <div class="col atendimento">
+            <div class="col-lg-6 col-md-12 atendimento pt-md-5">
                 <h3>ATENDIMENTO</h3>
                 <p>De Segunda a Sexta<br/>
                 das 8hs às 18 hs</p>

@@ -4,7 +4,13 @@
 
 .helpme{
     background: var(--global-secondary-color);
-    height: 858px;
+    height: auto;
+    padding: 0 0 5%;
+}
+.video{
+    width: 70%;
+    height: 650px;
+    max-height: 450px;
 }
 
 .box{
@@ -42,3 +48,10 @@
         font-weight: 300;
     }
 }
+
+@media (max-width: 900px){
+
+    .video{
+        width:100%;
+    }
+   }
