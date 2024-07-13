@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 </div>
-                <div class="container d-flex  pY-5">
+                <div class="container d-flex  pt-5">
                     <div class="row gx-5">                    <div class="col">
                         <h2>MISSÃO</h2>
                         <P>Temos como objetivo atender Pacientes que vem de outros Estados tratar do Câncer e outras doenças.</P>
@@ -61,6 +61,20 @@
                     </div>
                     </div>
 
+                </div>
+            </div>
+
+            <div class="section helpme">
+                <div class="container d-flex">
+                    <div class=" ">
+                        <div class="col-12 d-flex align-items-center justify-content-center text-center py-5 row w-100 d-flex">
+                            <h2 class="white">NOS AJUDE A FAZER A DIFERENÇA</h2>
+                            <h4 class="white">(11) 2446-0408 | (11) 99649-0545</h4>
+                        </div>
+                        <div class="col-12 d-flex align-items-center justify-content-center">
+                            <iframe width="70%" height="600" src="https://www.youtube.com/embed/gUYvp9b0qF0" title="Instituto Pequenos Anjos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
