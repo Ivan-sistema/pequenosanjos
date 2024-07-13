@@ -1,0 +1,24 @@
+.btn{
+    &-blue{
+        background: var(--global-primary-color);
+        color: var(--global-secondary-color);
+        font-weight: 700;
+
+        &:hover{
+            background: var(--global-secondary-color);
+            color: var(--global-primary-color);
+
+        }
+    }
+    &-pink{
+        background: var(--global-secondary-color);
+        color: var(--global-primary-color);
+        font-weight: 700;
+
+        &:hover{
+            background: var(--global-primary-color);
+            color: var(--global-secondary-color);
+
+        }
+    }
+}

@@ -1,0 +1,6 @@
+.nav-link{
+    color:  var(--global-primary-color);
+    &:hover{
+        color:  var(--global-secondary-color);
+    }
+}
