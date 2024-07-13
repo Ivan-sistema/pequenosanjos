@@ -195,6 +195,7 @@
         </div>
     </div>
 </div>
+<x-base.copy/>
     </body>
 </html>
 
