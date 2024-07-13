@@ -14,45 +14,56 @@
 
     </head>
     <body>
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
-        <img src="..." class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item" data-bs-interval="2000">
-        <img src="..." class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+        <x-base.header/>
+        <x-slide/>
 
-        <button class="btn btn-success btn-sm">Buton</button>
+        <main>
+            <div class="section o-instituto pY-5">
+                <div class="container d-flex">
+                    <div class="row  gx-5">
+                    <div class="col-6">
+                       <h2>O INSTITUTO<br/>
+                            PEQUENOS ANJOS </h2>
+                            <p>O Instituto Luta Pela Vida Pequenos Anjos é uma instituição não Governamental Sem Fins Lucrativos.
+
+                                <p>Com mais de 5 anos atendendo pacientes que vem para tratamento de outros Estados como Consultas Médicas, Tratamentos, Cirurgias e Transplantes, sabemos o quanto é difícil estar sozinho em busca de tratamento, e acima de tudo o paciente em tratamento e sua família precisa de amparo, carinho e um ambiente que possa proporcionar segurança.</p>
+                                <p>Nossa casa de apoio dará Moradia e Alimentação dar ajuda para marcar consultas, remédios, alimentação especial para quem precisa.</p>
+                                <p>Todo suporte necessário, para que esses pacientes tenham um bom atendimento, e uma boa recuperação no seu período de tratamento. Damos apoio aos acompanhante e ao paciente, até o termino do tratamento ou tenha seu tratamento controlado.​</p>
+                                <p>Precisamos de ajuda para manter nossa Casa de Apoio funcionando.</p>
+                                <p>Mas isso só será possível se tivermos sua solidariedade, pois o Brasil está em crise, imagina pra quem não tem recurso e nem saúde é muito pior.</p>
+                    </div>
+                    <div class="col-6">
+                        <img src="{{asset('assets/images/instituto.png') }}" class="img-fluid mx-auto d-block mb-4" alt="{{ config('app.name', 'Laravel') }}">
+                        <div class="info mx-auto">
+                            <p>Venha nos visitar e conhecer o Instituto Luta Pela Vida Pequenos Anjos.</p>
+                            <p>Teremos o maior prazer em mostrar o que fazemos, pois fazemos com amor e carinho.</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="container d-flex  pY-5">
+                    <div class="row gx-5">                    <div class="col">
+                        <h2>MISSÃO</h2>
+                        <P>Temos como objetivo atender Pacientes que vem de outros Estados tratar do Câncer e outras doenças.</P>
+                    </div>
+                    <div class="col">
+                        <h2>VISÃO</h2>
+                        <p>Dar apoio e acolhimento para a recuperação dos Adultos e Crianças.</p>
+                    </div>
+                    <div class="col">
+                        <h2>VALORES</h2>
+                        <ul>
+                            <li>Solidariedade</li>
+                            <li>Respeito</li>
+                            <li>Amor ao próximo</li>
+                            <li>Caridade a quem mais precisa</li>
+                        </ul>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
     </body>
 </html>
