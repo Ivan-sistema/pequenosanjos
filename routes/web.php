@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 
 Route::get('/', [PageController::class, 'index'])->name('home');
+Route::get('/doacao', [PageController::class, 'doacao'])->name('doacao');

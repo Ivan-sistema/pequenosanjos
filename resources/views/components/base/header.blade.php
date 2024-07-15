@@ -11,6 +11,7 @@
         <li class="nav-item"><a href="#" class="nav-link">O-INSTITUTO</a></li>
         <li class="nav-item"><a href="#" class="nav-link">PARCEIROS</a></li>
         <li class="nav-item"><a href="#" class="nav-link">CONTATO</a></li>
+        <li class="nav-item"><a href="{{route('doacao')}}" class="nav-link">SER APOIADOR</a></li>
       </ul>
     </header>
   </div>
