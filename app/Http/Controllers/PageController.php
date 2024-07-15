@@ -9,4 +9,9 @@ class PageController extends Controller
     public function index (){
         return view('pages.home');
     }
+
+    public function doacao() {
+        return view('pages.doacao');
+    }
 }
+
