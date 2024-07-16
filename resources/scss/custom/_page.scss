@@ -1,3 +1,57 @@
 .o-instituto{
     background: var(--global-white-color);
 }
+
+.helpme{
+    background: var(--global-secondary-color);
+    height: auto;
+    padding: 0 0 5%;
+}
+.video{
+    width: 70%;
+    height: 650px;
+    max-height: 450px;
+}
+
+.box{
+    width: auto;
+        height: auto;
+        border-left: 4px solid var(--global-secondary-color);
+        padding: 0 2%;
+         i{
+            color: var(--global-primary-color);
+         }
+
+         &:hover{
+            i{
+                color: var(--global-secondary-color);
+            }
+         }
+         span{
+            font-weight: 900;
+         }
+    }
+
+    .atendimento{
+        h3{
+            color: var(--global-secondary-color);
+        }
+        p{
+            margin: 0;
+        }
+    }
+.copy{
+    background: var(--global-secondary-color);
+    height: 95px;
+    span{
+        color: var(--global-white-color);
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 900px){
+
+    .video{
+        width:100%;
+    }
+   }

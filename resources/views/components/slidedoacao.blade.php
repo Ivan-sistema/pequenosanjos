@@ -5,24 +5,22 @@
         class="carousel carousel-dark d-flex justify-content-center"
         data-bs-ride="carousel"
     >
-        <div class="container slide slide-heading">
-            <div class="row d-flex ">
-                <div class="col-xs-12 col-md-12 col-lg-6 heading">
-                    <h2>INSTITUTO <br/>
-                        PEQUENOS ANJOS</h2>
-                    <h4>Cuidando de Crianças com Amor</h4>
-                    <p>Instituição não Governamental, criada a partir da iniciativa
-                    Social em prol da solidariedade.</p>
-                    <button class="btn btn-lg btn-blue">Saiba +</button>
-                </div>
-                <div class="col-xs-12 col-md-12 col-lg-6 d-flex flex-lg-column flex-md-row align-items-end justify-content-lg-between justify-content-md-center icons-social">
-                    <a href="https://www.facebook.com/InstitutoPequenosAnjos/" title="" target="_blank"><i class="bi bi-facebook  me-3"></i></a>
-                    <a href="https://www.instagram.com/doacaoinstitutopequenosanjos/" title="" target="_blank"><i class="bi bi-instagram me-3"></i></a>
-                    <a href="https://www.youtube.com/channel/UCp1Val8w-T01s4YRGIcfP6w" title="" target="_blank"><i class="bi bi-youtube me-3"></i></a>
-                    <a href="https://api.whatsapp.com/send?phone=5511996490545" title="" target="_blank"><i class="bi bi-whatsapp me-3"></i></a>
-                </div>
+    <div class="container slide slide-heading">
+        <div class="row d-flex ">
+            <div class="col-xs-12 col-md-12 col-lg-6 heading">
+                <h2>AJUDE A MANTER  <br />
+                NOSSOS PEQUENOS ANJOS</h2>
+                <h4 class="my-5">SEJA UM DOADOR</h4>
+                <a href="#oinstituto" class="btn btn-lg btn-blue">SER UM DOADOR</a>
+            </div>
+            <div class="col-xs-12 col-md-12 col-lg-6 d-flex flex-lg-column flex-md-row align-items-end justify-content-lg-between justify-content-md-center icons-social">
+                <a href="https://www.facebook.com/InstitutoPequenosAnjos/" title="" target="_blank"><i class="bi bi-facebook  me-3"></i></a>
+                <a href="https://www.instagram.com/doacaoinstitutopequenosanjos/" title="" target="_blank"><i class="bi bi-instagram me-3"></i></a>
+                <a href="https://www.youtube.com/channel/UCp1Val8w-T01s4YRGIcfP6w" title="" target="_blank"><i class="bi bi-youtube me-3"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=5511996490545" title="" target="_blank"><i class="bi bi-whatsapp me-3"></i></a>
             </div>
         </div>
+    </div>
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
