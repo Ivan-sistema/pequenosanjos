@@ -2,6 +2,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        {{-- <link rel="stylesheet" href="{{asset('build/assets/app-ec8be896.css')}}" /> --}}
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         <title>{{ config('app.name', 'Laravel') }}</title>
     </head>
@@ -155,10 +156,10 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <form method="POST" action="">
-
+                <form method="POST" action="{{route('form_action')}}">
+                    @csrf
                     <div class="input-group mb-3">
-                        <input type="text" value="" name="nome" class="form-control" placeholder="Nome:" aria-label="nome" aria-describedby="nome" required>
+                        <input type="text" value="" name="name" class="form-control" placeholder="Nome:" aria-label="nome" aria-describedby="nome" required>
                     </div>
 
                     <div class="input-group mb-3">
@@ -194,11 +195,11 @@
                 <p>(11) 99649-0545</p>
                 <h3 class="mt-3">SEJA UM DOADOR</h3>
                 <h5>DEPOSITO</h5>
-                <p>Banco : PAGSEGURO</p>
-                <p>Agência: 0001</p>
-                <p>Conta: 19311001-2</p>
+                <p>Banco : BRADESCO - 237</p>
+                <p>Agência: 1247</p>
+                <p>Conta: 0009940-6</p>
                 <h5 class="mt-3">PIX</h5>
-                <p>Chave: 11978453356</p>
+                <p>Chave: 24756138000183</p>
                 <p>Beneficiário: Instituto luta pela vida Pequenos Anjos</p>
 
             </div>
@@ -206,6 +207,7 @@
     </div>
 </div>
 <x-base.copy/>
+    {{-- <script src="{{ asset('build/assets/app-73f9d153.js')}}"></script> --}}
     </body>
 </html>
 
