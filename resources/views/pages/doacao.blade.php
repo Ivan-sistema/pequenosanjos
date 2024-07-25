@@ -2,6 +2,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        {{-- <link rel="stylesheet" href="{{asset('build/assets/app-ec8be896.css')}}" /> --}}
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         <title>{{ config('app.name', 'Laravel') }}</title>
     </head>
@@ -35,26 +36,26 @@
             </div>
             <div class="section o-instituto pb-5">
                 <div class="container d-flex">
-                    <div class="row  gx-5">
+                    <div class="row  g-2">
                         <div class="col-lg-4 col-md-12">
-                            <div class="info mx-auto" style="width: 400px;height: 195px;">
+                            <div class="info mx-auto" style="width: 100%;height: 195px;">
                                 <h5 class="mt-3">PIX</h5>
-                                <p>Chave: 11978453356</p>
+                                <p>Chave: 24756138000183</p>
                                 <p>Beneficiário: Instituto luta pela vida Pequenos Anjos</p>
                             </div>
 
                         </div>
                         <div class="col-lg-4 col-md-12">
-                            <div class="info mx-auto" style="width: 400px;height: 195px;">
+                            <div class="info mx-auto" style="width: 100%;height: 195px;">
                                 <h5 class="mt-3">DEPOSITO</h5>
-                        <p>Banco : PAGSEGURO</p>
-                        <p>Agência: 0001</p>
-                        <p>Conta: 19311001-2</p>
+                        <p>Banco : BRADESCO - 237</p>
+                        <p>Agência: 1247</p>
+                        <p>Conta: 0009940-6</p>
                             </div>
 
                         </div>
                         <div class="col-lg-4 col-md-12">
-                            <div class="info mx-auto" style="width: 400px;height: 195px;">
+                            <div class="info mx-auto" style="width: 100%;height: 195px;">
                                 <h5 class="mt-3">OUTRAS DOAÇÕES</h5>
                         <p>Caso você queira doar cestas basicas, roupas e etc.. por favor chame no whatsapp.</p>
                         <p><a href="https://api.whatsapp.com/send?phone=5511996490545" target="_blank" style="color: #f9f9f9;">(11) 99649-0545</a></p>
@@ -119,8 +120,8 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <form method="POST" action="">
-
+                <form method="POST" action="{{route('form_action')}}">
+                    @csrf
                     <div class="input-group mb-3">
                         <input type="text" value="" name="nome" class="form-control" placeholder="Nome:" aria-label="nome" aria-describedby="nome" required>
                     </div>
@@ -158,11 +159,11 @@
                 <p>(11) 99649-0545</p>
                 <h3 class="mt-3">SEJA UM DOADOR</h3>
                 <h5>DEPOSITO</h5>
-                <p>Banco : PAGSEGURO</p>
-                <p>Agência: 0001</p>
-                <p>Conta: 19311001-2</p>
+                <p>Banco : BRADESCO - 237</p>
+                <p>Agência: 1247</p>
+                <p>Conta: 0009940-6</p>
                 <h5 class="mt-3">PIX</h5>
-                <p>Chave: 11978453356</p>
+                <p>Chave: 24756138000183</p>
                 <p>Beneficiário: Instituto luta pela vida Pequenos Anjos</p>
 
             </div>
@@ -170,6 +171,7 @@
     </div>
 </div>
 <x-base.copy/>
+{{-- <script src="{{ asset('build/assets/app-73f9d153.js')}}"></script> --}}
     </body>
 </html>
 

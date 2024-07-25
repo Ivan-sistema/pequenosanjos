@@ -1,0 +1,43 @@
+::-webkit-input-placeholder{ color: var(--global-primary-color); }
+input[type=text],
+input[type=password],
+input[type=email],
+select{
+    width: 100%;
+    padding: 2% 1%;
+    margin: 0 0 3% 0;
+    border: 1px solid var(--global-secondary-color);
+    background: #fff;
+    box-shadow: var(--global-secondary-color);
+}
+textarea{
+    width: 100%;
+    padding: 1% 1%;
+    margin: 0 0 0 0;
+    border: 1px solid var(--global-secondary-color) !important;
+    background: #fff;
+    box-shadow: var(--global-secondary-color);
+    height: 300px;
+}
+
+
+.button{
+    background: var(--global-primary-color);
+    color: #f8f8f8;
+    border: none;
+    padding: 3% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    &:hover{
+        background: var(--global-secondary-color);
+    }
+    &-default{
+        width: 100%;
+    }
+    &-medium{
+        width: 50%;
+    }
+}
