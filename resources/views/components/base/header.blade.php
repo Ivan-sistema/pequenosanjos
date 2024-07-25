@@ -1,5 +1,5 @@
 <div class="container d-flex justify-content-end align-items-center user user__login">
-    <a href="{{route('login')}}" class="nav-link">LOGINs</a>
+    <a href="{{route('login')}}" class="nav-link">LOGIN</a>
 </div>
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
