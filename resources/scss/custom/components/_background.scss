@@ -1,0 +1,8 @@
+.background{
+    &__img{
+        height: 100vh;
+        position: relative;
+        background: url('/../public/assets/images/slider/slide-1.jpg') center center no-repeat;
+        background-size: cover;
+    }
+}

@@ -1,0 +1,26 @@
+
+.sidebar{
+    &__auth{
+        background: #fff;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &--right{
+        float: right;
+    }
+
+    &--left{
+        float: left;
+    }
+    &--small{
+        width: 10%;
+    }
+    &--pink{
+        background: var(--global-secondary-color);
+    }
+
+}
