@@ -19,14 +19,14 @@
                     <p style="padding:0; margin:0"><strong>{{$user->name}}</strong></p>
                     <p style="padding:0; margin:0">
                         @foreach ($profiles as $profile)
-                            {{$profile->alias}}
+                            {{Auth::user()->profile_id == $profile->id ? $profile->alias : '' }}
                         @endforeach
                     </p>
                 </div>
             </div>
             <div class="navigation navigation__dashboard">
                 <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="{{route('dashboard')}}" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-envelope"></i> Mensagem</a></li>
                     <hr>
 
@@ -42,15 +42,15 @@
                  </a>
             </div>
         </div>
-
         <div class="col-3"  style="padding: 0">
             <div class="sidebarinfo">
                 <div class="sidebarinfo__header mb-2 d-flex justify-content-center align-items-center text-center">
-                    <h3>Como posso atualizar meus dados?</h3>
+                    <h3>Como posso utilizar o sistema?</h3>
                 </div>
                 <div class="sidebarinfo__content">
                     <p>
-                        Nesse link você poderá atualizar todos seus dados, importante não trocar o seu email.
+                        Olá seja bem vindo ao sistema, ele será utilizado para que seja enviado mensagens para clientes e outros colaboradores,
+                        todo envio de emails deverá ser enviado pelo sistema.
                     </p>
                     <p>
                         Ao lado você encontrará  o menu de navegação onde você pode navegar tranquilamente pelo sistema, para voltar ao site basta clicar em ir para o site.
@@ -65,72 +65,49 @@
             <div class="conteudo d-flex flex-column">
                 <div class="conteudo__header d-flex justify-content-around align-items-center w-100 ">
                     <div class="cardinfo">
-                            <h5 class="card-title"><strong>Usuários Cadastrados</strong></h5>
-                            <p class="card-text"><strong>{{$user->count()}}</strong></p>
-                        </div>
-                        <div class="cardinfo">
-                            <h5 class="card-title"><strong>Mensagens</strong></h5>
-                            <p class="card-text"><strong>{{$contact->count()}}</strong></p>
-                        </div>
+                        <h5 class="card-title"><strong>Usuários Cadastrados</strong></h5>
+                        <p class="card-text"><strong>{{$user->count()}}</strong></p>
+                    </div>
+                    <div class="cardinfo d-flex justify-content-center align-items-center">
+                            <img src="{{asset('assets/images/logotipo.png') }}" class="img-fluid" style="width: 80%;" />
+                     </div>
                 </div>
                 <div class="conteudo__content w-100">
-                    @if (session('success'))
-                    <div class="alert alert-success">
-                        {{session('success')}}
+                    <div class="newcad d-flex justify-content-end align-items-center">
+                        <a class="btn btn-outline-success" href="{{route('new-user')}}">NOVO USUARIO +</a>
                     </div>
-                    @endif
-                    <form method="POST" action="{{ route('my_account_action')}}" >
-                        @csrf
-                        <div class="name-area  mb-3">
-                            <input
-                                type="text"
-                                class="form-control p-2 @error('name') is-invalid @enderror"
-                                name="name"
-                                placeholder="Nome:"
-                                value="{{ $user->name}}">
-                                @error('name')
-                                    <div class="error">
-                                        {{$message}}
-                                    </div>
-                                @enderror
-                        </div>
 
-                        <div class="email-area  mb-3">
-                            <input
-                                type="text"
-                                class="form-control p-2 @error('email') is-invalid @enderror"
-                                name="email"
-                                placeholder="E-mail:"
-                                value="{{$user->email}}">
-                            @error('email')
-                                <div class="error">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                              <th scope="col">NOME</th>
+                              <th scope="col">CADASTRO</th>
+                              <th scope="col">EMAIL</th>
+                              <th scope="col">PERFIL</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach ($users as $user)
+                            <tr>
+                              <th scope="row">{{$user->name}}</th>
+                                <td>{{$user->created_at->format('m/d/Y H:i');}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>
+                                    @foreach ($profiles as $profile)
+                                        {{Auth::user()->profile_id == $profile->id ? $profile->alias : '' }}
+                                    @endforeach</td>
 
+                                </tr>
+                            @endforeach
 
-                        <div class="profile-area">
-                            <select name="profile_id">
-                                @foreach ($profiles as $profile)
-                                    <option value="{{$profile->id}}"  {{ $profile->id == $user->profile_id ? 'selected' : ''}}>{{$profile->alias}}</option>
-                                @endforeach
-                            </select>
-
-                            @error('profile')
-                                <div class="error">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <input type="submit" class="button button-medium p-2" value="Salvar" />
-                    </form>
+                          </tbody>
+                      </table>
+                      {{ $users->onEachSide(0)->links() }}
                 </div>
             </div>
 
         </div>
-        </div>
-        </div>
-        </body>
-        </html>
+    </div>
+</div>
+    </body>
+</html>

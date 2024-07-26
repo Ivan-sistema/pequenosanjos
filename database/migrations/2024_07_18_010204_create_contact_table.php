@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('whatsapp');
             $table->string('assunto');
             $table->string('descricao');
+            $table->string('fluxo')->default(1);
             $table->timestamps();
         });
     }
