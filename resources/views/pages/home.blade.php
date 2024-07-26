@@ -172,7 +172,7 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control me-1" value="" name="telefone" placeholder="Telefone:" aria-label="Telefone">
+                        <input type="text" class="form-control me-1" value="" name="telefone" placeholder="Telefone:" aria-label="Telefone" required>
                         <input type="text" class="form-control" value="" name="whatsapp" placeholder="Whatsapp:" aria-label="Whatsapp" required>
                     </div>
 

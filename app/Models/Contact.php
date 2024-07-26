@@ -15,6 +15,7 @@ class Contact extends Model
         'telefone',
         'whatsapp',
         'assunto',
-        'descricao'
+        'descricao',
+        'fluxo'
     ];
     }

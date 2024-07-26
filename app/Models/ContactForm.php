@@ -16,6 +16,7 @@ protected $fillable = [
     'telefone',
     'whatsapp',
     'assunto',
-    'descricao'
+    'descricao',
+    'fluxo'
 ];
 }

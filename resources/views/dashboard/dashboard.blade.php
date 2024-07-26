@@ -19,7 +19,7 @@
                     <p style="padding:0; margin:0"><strong>{{$user->name}}</strong></p>
                     <p style="padding:0; margin:0">
                         @foreach ($profiles as $profile)
-                            {{$profile->alias}}
+                            {{Auth::user()->profile_id == $profile->id ? $profile->alias : '' }}
                         @endforeach
                     </p>
                 </div>
@@ -29,8 +29,9 @@
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-envelope"></i> Mensagem</a></li>
                     <hr>
+
                     <li class="nav-item"><a href="{{route('my_account')}}" class="nav-link"><i class="bi bi-check-circle"></i> Configurações</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-person-fill"></i> Usuários</a></li>
+                    <li class="nav-item"><a href="{{route('users')}}" class="nav-link"><i class="bi bi-person-fill"></i> Usuários</a></li>
                     <li class="nav-item"><a href="{{route('home')}}" class="nav-link"><i class="bi bi-houses-fill"></i> Ir para o site</a></li>
                 </ul>
             </div>
@@ -69,11 +70,40 @@
                         </div>
                         <div class="cardinfo">
                             <h5 class="card-title"><strong>Mensagens</strong></h5>
-                            <p class="card-text"><strong>{{$contact->count()}}</strong></p>
+                            <p class="card-text"><strong>{{$contacts->count()}}</strong></p>
                         </div>
                 </div>
                 <div class="conteudo__content w-100">
                     Seja muito bem vindo  <strong>{{$user->name}}</strong>
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                              <th scope="col">ASSUNTO</th>
+                              <th scope="col">DATA</th>
+                              <th scope="col">DE</th>
+                              <th scope="col">PARA</th>
+                              <th scope="col">STATUS</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach ($contacts as $contact)
+                            <tr>
+                              <th scope="row">{{$contact->assunto}}</th>
+                                <td>{{$contact->created_at->format('m/d/Y H:i');}}</td>
+                                <td>{{$contact->email}}</td>
+                                <td>contato@pequenosanjos.com.br</td>
+                                <td>
+                                    @if ($contact->fluxo == 1)
+                                    <span class="badge bg-danger">Não lido</span>
+                                    @endif
+                                </td>
+                                </tr>
+                            @endforeach
+
+                          </tbody>
+                      </table>
+                      {{ $contacts->onEachSide(0)->links() }}
                 </div>
             </div>
 
