@@ -26,7 +26,7 @@
             </div>
             <div class="navigation navigation__dashboard">
                 <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
+                    <li class="nav-item"><a href="{{route('dashboard')}}" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-envelope"></i> Mensagem</a></li>
                     <hr>
                     <li class="nav-item"><a href="{{route('my_account')}}" class="nav-link"><i class="bi bi-check-circle"></i> Configurações</a></li>
@@ -41,15 +41,15 @@
                  </a>
             </div>
         </div>
+
         <div class="col-3"  style="padding: 0">
             <div class="sidebarinfo">
                 <div class="sidebarinfo__header mb-2 d-flex justify-content-center align-items-center text-center">
-                    <h3>Como posso utilizar o sistema?</h3>
+                    <h3>Como posso atualizar meus dados?</h3>
                 </div>
                 <div class="sidebarinfo__content">
                     <p>
-                        Olá seja bem vindo ao sistema, ele será utilizado para que seja enviado mensagens para clientes e outros colaboradores,
-                        todo envio de emails deverá ser enviado pelo sistema.
+                        Nesse link você poderá atualizar todos seus dados, importante não trocar o seu email.
                     </p>
                     <p>
                         Ao lado você encontrará  o menu de navegação onde você pode navegar tranquilamente pelo sistema, para voltar ao site basta clicar em ir para o site.
@@ -73,12 +73,63 @@
                         </div>
                 </div>
                 <div class="conteudo__content w-100">
-                    Seja muito bem vindo  <strong>{{$user->name}}</strong>
+                    @if (session('success'))
+                    <div class="alert alert-success">
+                        {{session('success')}}
+                    </div>
+                    @endif
+                    <form method="POST" action="{{ route('my_account_action')}}" >
+                        @csrf
+                        <div class="name-area  mb-3">
+                            <input
+                                type="text"
+                                class="form-control p-2 @error('name') is-invalid @enderror"
+                                name="name"
+                                placeholder="Nome:"
+                                value="{{ $user->name}}">
+                                @error('name')
+                                    <div class="error">
+                                        {{$message}}
+                                    </div>
+                                @enderror
+                        </div>
+
+                        <div class="email-area  mb-3">
+                            <input
+                                type="text"
+                                class="form-control p-2 @error('email') is-invalid @enderror"
+                                name="email"
+                                placeholder="E-mail:"
+                                value="{{$user->email}}">
+                            @error('email')
+                                <div class="error">
+                                    {{$message}}
+                                </div>
+                            @enderror
+                        </div>
+
+
+                        <div class="profile-area">
+                            <select name="profile_id">
+                                @foreach ($profiles as $profile)
+                                    <option value="{{$profile->id}}"  {{ $profile->id == $user->profile_id ? 'selected' : ''}}>{{$profile->alias}}</option>
+                                @endforeach
+                            </select>
+
+                            @error('profile')
+                                <div class="error">
+                                    {{$message}}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <input type="submit" class="button button-medium p-2" value="Salvar" />
+                    </form>
                 </div>
             </div>
 
         </div>
-    </div>
-</div>
-    </body>
-</html>
+        </div>
+        </div>
+        </body>
+        </html>

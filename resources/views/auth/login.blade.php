@@ -26,9 +26,10 @@
                                     type="email"
                                     class="form-control p-2 @error('nemail') is-invalid @enderror"
                                     name="email"
-                                    value="{{ old('email') }}"
-                                    placeholder="{{ __('Email') }}"
-                                    required autocomplete="email"
+                                    value="{{ $email ?? '' }}"
+                                    placeholder="{{ __('Digite seu e-mail') }}"
+                                    required
+                                    autocomplete="email"
                                     autofocus>
 
                                 @error('email')

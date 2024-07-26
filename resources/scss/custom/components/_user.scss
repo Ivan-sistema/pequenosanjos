@@ -7,4 +7,22 @@
         }
 
     }
+
+    &__dashboard{
+        height: 200px;
+        width: 100%;
+        background:  var(--global-secondary-color);
+
+        &__figure{
+            i{
+                color: var(--global-white-color);
+            }
+        }
+        &__content{
+            p{
+                color: var(--global-white-color);
+            }
+
+        }
+    }
 }
