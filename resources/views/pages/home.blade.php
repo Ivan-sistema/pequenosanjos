@@ -156,6 +156,11 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6 col-md-12">
+                @if (session('success'))
+    <div class="alert alert-success">
+        {{session('success')}}
+    </div>
+@endif
                 <form method="POST" action="{{route('form_action')}}">
                     @csrf
                     <div class="input-group mb-3">
