@@ -51,5 +51,10 @@ Route::get('/dashboard', [DashboardController::class, 'index'] )->name('dashboar
 Route::get('dashboard/minha-conta', [DashboardController::class, 'my_account'])->name('my_account');
 Route::post('dashboard/minha-conta', [DashboardController::class, 'my_account_action'])->name('my_account_action');
 
+
+Route::get('dashboard/usuarios', [DashboardController::class, 'users'])->name('users');
+Route::get('dashboard/novo-usuario', [DashboardController::class, 'new_user'])->name('new-user');
+Route::post('dashboard/novo-usuario', [DashboardController::class, 'new_user_action'])->name('new_user_action');
+
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
