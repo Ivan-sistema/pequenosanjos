@@ -22,6 +22,6 @@ class PageController extends Controller
         $formData = $r->only(['name','email', 'telefone', 'whatsapp', 'assunto', 'descricao']);
         $contact = Contact::create($formData);
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'E-mail enviado com sucesso');;
     }
 }

@@ -5,3 +5,27 @@
     }
 }
 
+.navigation{
+
+    &__dashboard{
+        background:  var(--global-primary-color);
+        height: 90%;
+    }
+    ul{}
+    li{
+        padding: 5%;
+        a{
+            color: var(--global-white-color);
+            i{
+                font-size: 16px;
+            }
+        }
+        &:hover {
+            background:  var(--global-white-color);
+            a{
+                color:  var(--global-secondary-color);
+            }
+        }
+    }
+
+}
