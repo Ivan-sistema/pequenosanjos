@@ -26,7 +26,7 @@
             </div>
             <div class="navigation navigation__dashboard">
                 <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
+                    <li class="nav-item"><a href="{{route('dashboard')}}" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-envelope"></i> Mensagem</a></li>
                     <hr>
 
