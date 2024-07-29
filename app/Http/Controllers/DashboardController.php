@@ -69,4 +69,16 @@ class DashboardController extends Controller
         $data['users'] = User::paginate(10);
         return view('dashboard.usuarios', $data);
     }
+
+    public function read_message (string $id)
+    {
+
+        $data['user'] = auth()->user();
+        $data['profiles'] = Profile::all();
+        $data['contact']  = Contact::findOrFail($id);
+
+        $data['contacts'] = Contact::all()
+        ;
+        return view('dashboard.message', $data);
+    }
 }
