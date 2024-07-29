@@ -78,37 +78,11 @@
                     <div class="newcad d-flex justify-content-start align-items-center">
                         Seja muito bem vindo  <strong>{{$user->name}}</strong>
                     </div>
+                    <div class="contant_main d-flex flex-column justify-content-start">
+                        <div class="contant__nome">Nome : {{ $contact->name }}</div>
+                        <div class="content__email">Email: {{ $contact->email }}</div>
+                        <div class="content__descricao">Descrição: <br/>{{ $contact->descricao }}</div>
 
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                              <th scope="col">ASSUNTO</th>
-                              <th scope="col">DATA</th>
-                              <th scope="col">DE</th>
-                              <th scope="col">PARA</th>
-                              <th scope="col">STATUS</th>
-                              <th scope="col">AÇÃO</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            @foreach ($contacts as $contact)
-                            <tr>
-                              <th scope="row">{{$contact->assunto}}</th>
-                                <td>{{$contact->created_at->format('m/d/Y H:i');}}</td>
-                                <td>{{$contact->email}}</td>
-                                <td>contato@pequenosanjos.com.br</td>
-                                <td>
-                                    @if ($contact->fluxo == 1)
-                                    <span class="badge bg-danger">Não lido</span>
-                                    @endif
-                                </td>
-                                <td><a href="{{route('dashboard')}}/mensagem/{{$contact->id}}">VER</a></td>
-                                </tr>
-                            @endforeach
-
-                          </tbody>
-                      </table>
-                      {{ $contacts->onEachSide(0)->links() }}
                 </div>
             </div>
 
@@ -117,3 +91,5 @@
 </div>
     </body>
 </html>
+
+
