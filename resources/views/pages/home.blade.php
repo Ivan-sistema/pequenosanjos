@@ -5,6 +5,15 @@
         {{-- <link rel="stylesheet" href="{{asset('build/assets/app-ec8be896.css')}}" /> --}}
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2186Z0WSQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2186Z0WSQ5');
+</script>
     </head>
     <body>
         <x-base.header/>

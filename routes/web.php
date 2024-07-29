@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use League\CommonMark\Extension\SmartPunct\DashParser;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,5 +57,9 @@ Route::get('dashboard/usuarios', [DashboardController::class, 'users'])->name('u
 Route::get('dashboard/novo-usuario', [DashboardController::class, 'new_user'])->name('new-user');
 Route::post('dashboard/novo-usuario', [DashboardController::class, 'new_user_action'])->name('new_user_action');
 
+Route::get('/dashboard/mensagem/{contatoId}', [DashboardController::class, 'read_message'])->name('mensagem');
+
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+
