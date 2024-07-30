@@ -32,7 +32,7 @@
 
         form{
             margin: 10% auto;
-            width: 50%;
+            width: 80%;
         }
     }
 }
@@ -45,4 +45,37 @@
 
 .mainform{
     width: 100%;
+}
+
+
+.email{
+    &__info{
+        margin-bottom: 5%;
+        &:hover{
+            background: var(--global-secondary-color);
+        }
+        &--data{
+            width: 20%;
+            padding-right: 5%;
+            span{
+                font-size: 20px;
+                font-weight: 300;
+                strong{
+                    font-size: 42px;
+                    font-weight: 900;
+                }
+            }
+        }
+        &--description{
+            width: 70%;
+            border-left: 2px solid #000;
+            padding-left: 5%;
+            p{
+                margin:0;
+                strong{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
 }

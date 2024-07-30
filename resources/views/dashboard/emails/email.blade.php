@@ -36,7 +36,7 @@
             <div class="navigation navigation__dashboard">
                 <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a href="{{route('dashboard')}}" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-envelope"></i> Mensagem</a></li>
+                    <li class="nav-item"><a href="{{route('all_email')}}" class="nav-link"><i class="bi bi-envelope"></i> Email</a></li>
                     <hr>
 
                     <li class="nav-item"><a href="{{route('my_account')}}" class="nav-link"><i class="bi bi-check-circle"></i> Configurações</a></li>
@@ -87,58 +87,35 @@
                         </div>
                 </div>
                 <div class="conteudo__content w-100">
-                    @if (session('success'))
-                    <div class="alert alert-success">
-                        {{session('success')}}
+                    <div class="newcad d-flex justify-content-between align-items-center">
+                        <p>EMAILS</p>
+                        <a class="btn btn-outline-success" href="{{route('new_email')}}">NOVO EMAIL +</a>
                     </div>
-                    @endif
-                    <form method="POST" action="{{ route('my_account_action')}}" >
-                        @csrf
-                        <div class="name-area  mb-3">
-                            <input
-                                type="text"
-                                class="form-control p-2 @error('name') is-invalid @enderror"
-                                name="name"
-                                placeholder="Nome:"
-                                value="{{ $user->name}}">
-                                @error('name')
-                                    <div class="error">
-                                        {{$message}}
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-6">
+                            <img src="{{asset('assets/images/calendar.png') }}" class="img-fluid mx-auto d-block mb-4" alt="{{ config('app.name', 'Laravel') }}">
+                        </div>
+                        <div class="col-6">
+                            @foreach ($emails as $email)
+                                <a href="#" style="text-decoration: none; color: #000;">
+                                    <div class="email__info d-flex align-items-center justify-content-center">
+                                        <div class="email__info--data">
+                                            <span><strong>10</strong></span>
+                                            <span>19:20</span>
+                                        </div>
+                                        <div class="email__info--description">
+                                            <p>Usuário: {{$email->name}} </p>
+                                            <p>Para:  {{$email->email}}</p>
+                                            <p><strong>{{$email->assunto}}</strong></p>
+                                        </div>
                                     </div>
-                                @enderror
+                                </a>
+                            @endforeach
+
+
+
                         </div>
-
-                        <div class="email-area  mb-3">
-                            <input
-                                type="text"
-                                class="form-control p-2 @error('email') is-invalid @enderror"
-                                name="email"
-                                placeholder="E-mail:"
-                                value="{{$user->email}}">
-                            @error('email')
-                                <div class="error">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-
-
-                        <div class="profile-area">
-                            <select name="profile_id">
-                                @foreach ($profiles as $profile)
-                                    <option value="{{$profile->id}}"  {{ $profile->id == $user->profile_id ? 'selected' : ''}}>{{$profile->alias}}</option>
-                                @endforeach
-                            </select>
-
-                            @error('profile')
-                                <div class="error">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <input type="submit" class="button button-medium p-2" value="Salvar" />
-                    </form>
+                    </div>
                 </div>
             </div>
 
