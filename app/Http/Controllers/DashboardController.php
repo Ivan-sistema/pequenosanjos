@@ -6,6 +6,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\UpdateProfileRequest;
 use App\Models\Contact;
 use App\Models\ContactForm;
+use App\Models\Email;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,6 +20,7 @@ class DashboardController extends Controller
         $data['user'] = auth()->user();
         $data['profiles'] = Profile::all();
         $data['contacts'] = Contact::paginate(10);
+        $data['emails'] = Email::all();
 
         return view('dashboard.dashboard', $data);
     }
@@ -27,7 +29,9 @@ class DashboardController extends Controller
     {
         $data['user'] = auth()->user();
         $data['profiles'] = Profile::all();
-        $data['contact'] = Contact::all();
+        $data['contacts'] = Contact::all();
+        $data['emails'] = Email::all();
+
         return view('dashboard.my_account', $data);
     }
 
@@ -37,6 +41,7 @@ class DashboardController extends Controller
         $userId = Auth::user()->id;
         $user = User::find($userId);
         $user->update($data);
+        $data['emails'] = Email::all();
         return redirect()->route('my_account')->with('success', 'Perfil atualizado com sucesso');
     }
 
@@ -45,6 +50,7 @@ class DashboardController extends Controller
         $data['profiles'] = Profile::all();
         $data['contact'] = Contact::all();
         $data['users'] = User::paginate(10);
+        $data['emails'] = Email::all();
 
         return view('dashboard.usuarios', $data);
     }
@@ -54,6 +60,7 @@ class DashboardController extends Controller
         $data['user'] = auth()->user();
         $data['profiles'] = Profile::all();
         $data['contact'] = Contact::all();
+        $data['emails'] = Email::all();
         return view('dashboard.novo_usuario', $data);
     }
     public function new_user_action(RegisterRequest $r)
@@ -67,6 +74,7 @@ class DashboardController extends Controller
         $data['profiles'] = Profile::all();
         $data['contact'] = Contact::all();
         $data['users'] = User::paginate(10);
+        $data['emails'] = Email::all();
         return view('dashboard.usuarios', $data);
     }
 
@@ -77,7 +85,8 @@ class DashboardController extends Controller
         $data['profiles'] = Profile::all();
         $data['contact']  = Contact::findOrFail($id);
 
-        $data['contacts'] = Contact::all()
+        $data['contacts'] = Contact::all();
+        $data['emails'] = Email::all();
         ;
         return view('dashboard.message', $data);
     }

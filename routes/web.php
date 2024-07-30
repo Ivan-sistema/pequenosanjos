@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use League\CommonMark\Extension\SmartPunct\DashParser;
@@ -58,6 +59,9 @@ Route::get('dashboard/novo-usuario', [DashboardController::class, 'new_user'])->
 Route::post('dashboard/novo-usuario', [DashboardController::class, 'new_user_action'])->name('new_user_action');
 
 Route::get('/dashboard/mensagem/{contatoId}', [DashboardController::class, 'read_message'])->name('mensagem');
+Route::get('dashboard/emails', [EmailController::class, 'all_email'])->name('all_email');
+Route::get('dashboard/novo-email', [EmailController::class, 'new_email'])->name('new_email');
+Route::post('dashboard/novo-email', [EmailController::class, 'action_new_email'])->name('action_new_email');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
