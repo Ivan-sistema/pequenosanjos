@@ -100,8 +100,8 @@
                                 <a href="#" style="text-decoration: none; color: #000;">
                                     <div class="email__info d-flex align-items-center justify-content-center">
                                         <div class="email__info--data">
-                                            <span><strong>10</strong></span>
-                                            <span>19:20</span>
+                                            <span><strong>{{$email->created_at->format('d');}}</strong></span>
+                                            <span>{{$email->created_at->format('H:i');}}</span>
                                         </div>
                                         <div class="email__info--description">
                                             <p>Usuário: {{$email->name}} </p>
