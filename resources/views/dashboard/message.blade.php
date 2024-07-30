@@ -5,6 +5,15 @@
         {{-- <link rel="stylesheet" href="{{asset('build/assets/app-ec8be896.css')}}" /> --}}
         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2186Z0WSQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2186Z0WSQ5');
+</script>
     </head>
     <body>
 
@@ -26,8 +35,8 @@
             </div>
             <div class="navigation navigation__dashboard">
                 <ul  class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"><i class="bi bi-envelope"></i> Mensagem</a></li>
+                    <li class="nav-item"><a href="{{route('dashboard')}}" class="nav-link"><i class="bi bi-house"></i> Home</a></li>
+                    <li class="nav-item"><a href="{{route('all_email')}}" class="nav-link"><i class="bi bi-envelope"></i> Email</a></li>
                     <hr>
 
                     <li class="nav-item"><a href="{{route('my_account')}}" class="nav-link"><i class="bi bi-check-circle"></i> Configurações</a></li>
@@ -69,14 +78,18 @@
                             <p class="card-text"><strong>{{$user->count()}}</strong></p>
                         </div>
                         <div class="cardinfo">
-                            <h5 class="card-title"><strong>Mensagens</strong></h5>
+                            <h5 class="card-title"><strong>Mensagens Recebidas pelo SITE</strong></h5>
                             <p class="card-text"><strong>{{$contacts->count()}}</strong></p>
+                        </div>
+                        <div class="cardinfo">
+                            <h5 class="card-title"><strong>Mensagens Enviadas pelo SISTEMA</strong></h5>
+                            <p class="card-text"><strong>{{$emails->count()}}</strong></p>
                         </div>
                 </div>
                 <div class="conteudo__content w-100">
 
                     <div class="newcad d-flex justify-content-start align-items-center">
-                        Seja muito bem vindo  <strong>{{$user->name}}</strong>
+                        Seja muito bem vindo <strong>{{$user->name}}</strong>
                     </div>
                     <div class="contant_main d-flex flex-column justify-content-start">
                         <div class="contant__nome">Nome : {{ $contact->name }}</div>
