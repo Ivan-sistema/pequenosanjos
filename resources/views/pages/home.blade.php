@@ -170,7 +170,7 @@
         {{session('success')}}
     </div>
 @endif
-                <form method="POST" action="{{route('form_action')}}">
+                <form method="POST" action="{{route('contato.store')}}">
                     @csrf
                     <div class="input-group mb-3">
                         <input type="text" value="" name="name" class="form-control" placeholder="Nome:" aria-label="nome" aria-describedby="nome" required>
@@ -189,9 +189,7 @@
                         <input type="text" class="form-control" value="" name="assunto" placeholder="Assunto:" aria-label="assunto" aria-describedby="assunto" required>
                     </div>
                     <div class="input-group mb-3">
-                        <textarea name="descricao" value="" class="form-control" placeholder="Descrição" style="height: 300px" required>
-
-                </textarea>
+                        <textarea name="descricao" value="" class="form-control" placeholder="Descrição" style="height: 300px" required></textarea>
                     </div>
                     <div class="col-12">
                         <input type="submit" class="btn btn-blue" />

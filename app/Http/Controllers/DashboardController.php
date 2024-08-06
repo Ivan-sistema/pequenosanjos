@@ -19,7 +19,7 @@ class DashboardController extends Controller
     {
         $data['user'] = auth()->user();
         $data['profiles'] = Profile::all();
-        $data['contacts'] = Contact::paginate(10);
+        $data['contacts'] = Contact::orderBy('created_at', 'desc')->paginate(10);
         $data['emails'] = Email::all();
 
         return view('dashboard.dashboard', $data);
@@ -49,7 +49,7 @@ class DashboardController extends Controller
         $data['user'] = auth()->user();
         $data['profiles'] = Profile::all();
         $data['contact'] = Contact::all();
-        $data['users'] = User::paginate(10);
+        $data['users'] = User::orderBy('created_at', 'desc')->paginate(10);
         $data['emails'] = Email::all();
 
         return view('dashboard.usuarios', $data);
@@ -73,7 +73,7 @@ class DashboardController extends Controller
         $data['user'] = auth()->user();
         $data['profiles'] = Profile::all();
         $data['contact'] = Contact::all();
-        $data['users'] = User::paginate(10);
+        $data['users'] = User::orderBy('created_at', 'desc')->paginate(10);
         $data['emails'] = Email::all();
         return view('dashboard.usuarios', $data);
     }

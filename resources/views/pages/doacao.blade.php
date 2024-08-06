@@ -129,10 +129,10 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <form method="POST" action="{{route('form_action')}}">
+                <form method="POST"  action="{{route('contato.store')}}">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="text" value="" name="nome" class="form-control" placeholder="Nome:" aria-label="nome" aria-describedby="nome" required>
+                        <input type="text" value="" name="name" class="form-control" placeholder="Nome:" aria-label="nome" aria-describedby="nome" required>
                     </div>
 
                     <div class="input-group mb-3">
