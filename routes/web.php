@@ -29,6 +29,7 @@ Route::get('/', function () {
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::post('/', [PageController::class, 'form_action'])->name('form_action');
 Route::get('/doacao', [PageController::class, 'doacao'])->name('doacao');
+Route::post('/', [PageController::class, 'store'])->name('contato.store');
 
 //AUTH
 Route::get('/login', function(){return view('auth.login');})->name('login');
@@ -60,8 +61,8 @@ Route::post('dashboard/novo-usuario', [DashboardController::class, 'new_user_act
 
 Route::get('/dashboard/mensagem/{contatoId}', [DashboardController::class, 'read_message'])->name('mensagem');
 Route::get('dashboard/emails', [EmailController::class, 'all_email'])->name('all_email');
+Route::post('dashboard/emails', [EmailController::class, 'store'])->name('email.store');
 Route::get('dashboard/novo-email', [EmailController::class, 'new_email'])->name('new_email');
-Route::post('dashboard/novo-email', [EmailController::class, 'action_new_email'])->name('action_new_email');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

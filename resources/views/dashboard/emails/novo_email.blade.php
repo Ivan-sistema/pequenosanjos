@@ -74,16 +74,24 @@
             <div class="conteudo d-flex flex-column">
                 <div class="conteudo__content w-100">
                     <div class="newcad d-flex justify-content-between align-items-center">
-                        <p>NOVO EMAIL</p>
+                        <p>VOLTAR</p>
                         <a class="btn btn-outline-success" href="{{route('all_email')}}"><- Voltar</a>
                     </div>
                     <div class="row d-flex justify-content-between align-items-center">
                         <div class="col-12 d-flex justify-content-center">
-                            <form method="POST" action="{{route('action_new_email')}}"  enctype="multipart/form-data">
+                            <form method="POST" action="{{route('email.store')}}"  enctype="multipart/form-data">
                                 @csrf
                                 <div class="name-area  mb-3">
                                     <input type="text" class="form-control p-2 @error('name') is-invalid @enderror" name="name" value="{{$user->name}}" hidden>
                                     @error('name')
+                                        <div class="error">
+                                            {{$message}}
+                                        </div>
+                                    @enderror
+                                </div>
+                                <div class="name-area  mb-3">
+                                    <input type="text" hidden class="form-control p-2 @error('useremail') is-invalid @enderror" name="useremail" value="{{$user->email}}" >
+                                    @error('useremail')
                                         <div class="error">
                                             {{$message}}
                                         </div>
@@ -98,7 +106,7 @@
                                     @enderror
                                 </div>
                                 <div class="email-area  mb-3">
-                                    <input type="email" class="form-control p-2 @error('copy') is-invalid @enderror" name="copy" placeholder="COPY:" value="{{$user->email}}">
+                                    <input type="email" class="form-control p-2 @error('copy') is-invalid @enderror" name="copy" placeholder="COPY:" value="admin@pequenosanjos.com.br" hidden>
                                     @error('copy')
                                         <div class="error">
                                             {{$message}}
@@ -115,7 +123,7 @@
                                         @enderror
                                     </div>
                                     <div class="file-area  mb-3 col-6">
-                                        <input type="file" class="form-control p-2 @error('file') is-invalid @enderror" name="file" placeholder="ANEXO:" value="">
+                                        <input type="file" class="form-control p-2 @error('file') is-invalid @enderror" name="file" placeholder="ANEXO:" value="" multiple>
                                         @error('file')
                                             <div class="error">
                                                 {{$message}}
