@@ -51,7 +51,7 @@
                  </a>
             </div>
         </div>
-        <div class="col-3"  style="padding: 0">
+        {{-- <div class="col-3"  style="padding: 0">
             <div class="sidebarinfo">
                 <div class="sidebarinfo__header mb-2 d-flex justify-content-center align-items-center text-center">
                     <h3>Como posso utilizar o sistema?</h3>
@@ -69,8 +69,8 @@
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="col-7 d-flex"  style="padding: 0">
+        </div> --}}
+        <div class="col-10 d-flex"  style="padding: 0">
             <div class="conteudo d-flex flex-column">
                 <div class="conteudo__header d-flex justify-content-around align-items-center w-100 ">
                     <div class="cardinfo">
@@ -88,13 +88,97 @@
                 </div>
                 <div class="conteudo__content w-100">
 
-                    <div class="newcad d-flex justify-content-start align-items-center">
-                        Seja muito bem vindo <strong>{{$user->name}}</strong>
+                    <div class="newcad d-flex justify-content-between align-items-center">
+                        <a class="btn btn-outline-success" href="{{route('dashboard')}}"><- Voltar</a>
                     </div>
                     <div class="contant_main d-flex flex-column justify-content-start">
-                        <div class="contant__nome">Nome : {{ $contact->name }}</div>
+                        <div class="email__info d-flex align-items-center justify-content-center" style="width: 30%;">
+                            <div class="email__info--data">
+                                <span><strong>{{$contact->created_at->format('d');}}</strong></span>
+                                <span>{{$contact->created_at->format('H:i');}}</span>
+                            </div>
+                            <div class="email__info--description">
+                                <p>Usuário: {{$contact->name}} </p>
+                                <p>Para:  {{$contact->email}}</p>
+                                <p><strong>{{$contact->assunto}}</strong></p>
+                            </div>
+                        </div>
+                        <div class="email__info--content">
+                            <div class="row gx-5">
+                                <div class="col-6" style="background: #f8f8f8; padding:1%; border-rigth:1px solid #000">
+                                    <h5>Mensagem recebida</h5>
+                                    <p>{{$contact->descricao}}</p>
+                                </div>
+                                <div class="col-6" style="background: #fafafa; padding:1%">
+                                    <h5>Responder mensagem</h5>
+                                    <form method="POST" action="{{route('email.store')}}"  enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="name-area  mb-3">
+                                            <input type="text" class="form-control p-2 @error('name') is-invalid @enderror" name="name" value="{{$user->name}}" hidden>
+                                            @error('name')
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="name-area  mb-3">
+                                            <input type="text" hidden class="form-control p-2 @error('useremail') is-invalid @enderror" name="useremail" value="{{$user->email}}" >
+                                            @error('useremail')
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="email-area  mb-3">
+                                            <input type="email" class="form-control p-2 @error('email') is-invalid @enderror" name="email" placeholder="E-MAIL:" value="{{$contact->email}}">
+                                            @error('email')
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="email-area  mb-3">
+                                            <input type="email" class="form-control p-2 @error('copy') is-invalid @enderror" name="copy" placeholder="COPY:" value="admin@pequenosanjos.com.br" hidden>
+                                            @error('copy')
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="row">
+                                            <div class="assunto-area  mb-3 col-6">
+                                                <input type="text" class="form-control p-2 @error('assunto') is-invalid @enderror" name="assunto" placeholder="ASSUNTO:" value="">
+                                                @error('assunto')
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                            <div class="file-area  mb-3 col-6">
+                                                <input type="file" class="form-control p-2 @error('file') is-invalid @enderror" name="file" placeholder="ANEXO:" value="" multiple>
+                                                @error('file')
+                                                    <div class="error">
+                                                        {{$message}}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+
+                                        <div class="file-area  mb-3 col-12">
+                                            <textarea name="mensagem" value="" class="form-control" placeholder="mensagem" style="height: 300px" required></textarea>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <input type="submit" class="btn btn-blue" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="contant__nome">Nome : {{ $contact->name }}</div>
                         <div class="content__email">Email: {{ $contact->email }}</div>
-                        <div class="content__descricao">Descrição: <br/>{{ $contact->descricao }}</div>
+                        <div class="content__descricao">Descrição: <br/>{{ $contact->descricao }}</div> --}}
 
                 </div>
             </div>

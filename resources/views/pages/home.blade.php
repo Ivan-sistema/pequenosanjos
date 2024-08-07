@@ -27,6 +27,7 @@
 
                             <h2>O INSTITUTO<br />
                                 PEQUENOS ANJOS </h2>
+
                             <p>O Instituto Luta Pela Vida Pequenos Anjos é uma instituição não Governamental Sem Fins Lucrativos.
 
                             <p>Com mais de 8 anos atendendo pacientes que vem para tratamento de outros Estados como Consultas Médicas, Tratamentos, Cirurgias e Transplantes, sabemos o quanto é difícil

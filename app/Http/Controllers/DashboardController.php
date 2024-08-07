@@ -80,6 +80,9 @@ class DashboardController extends Controller
 
     public function read_message (string $id)
     {
+        $updateRead = Contact::find($id);
+        $updateRead->fluxo = '0';
+        $updateRead->save();
 
         $data['user'] = auth()->user();
         $data['profiles'] = Profile::all();

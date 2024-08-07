@@ -113,6 +113,8 @@
                                 <td>
                                     @if ($contact->fluxo == 1)
                                     <span class="badge bg-danger">Não lido</span>
+                                    @else
+                                    <span class="badge bg-success">lido</span>
                                     @endif
                                 </td>
                                 <td><a href="{{route('dashboard')}}/mensagem/{{$contact->id}}"><i class="bi bi-eye" style="font-size: 16px"></i></a></td>

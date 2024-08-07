@@ -51,7 +51,7 @@
                  </a>
             </div>
         </div>
-        <div class="col-3"  style="padding: 0">
+        {{-- <div class="col-3"  style="padding: 0">
             <div class="sidebarinfo">
                 <div class="sidebarinfo__header mb-2 d-flex justify-content-center align-items-center text-center">
                     <h3>Como posso utilizar o sistema?</h3>
@@ -69,8 +69,8 @@
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="col-7 d-flex"  style="padding: 0">
+        </div> --}}
+        <div class="col-10 d-flex"  style="padding: 0">
             <div class="conteudo d-flex flex-column">
                 <div class="conteudo__header d-flex justify-content-around align-items-center w-100 ">
                     <div class="cardinfo">
@@ -88,14 +88,29 @@
                 </div>
                 <div class="conteudo__content w-100">
 
-                    <div class="newcad d-flex justify-content-start align-items-center">
-                        Seja muito bem vindo <strong>{{$user->name}}</strong>
+                    <div class="newcad d-flex justify-content-between align-items-center">
+                        <a class="btn btn-outline-success" href="{{route('dashboard')}}"><- Voltar</a>
                     </div>
                     <div class="contant_main d-flex flex-column justify-content-start">
-                        <div class="contant__nome">Nome : {{ $email->name }}</div>
-                        <div class="content__email">Email: {{ $email->email }}</div>
-                        <div class="content__email">Assunto: {{ $email->assunto }}</div>
-                        <div class="content__descricao">Descrição: <br/>{{ $email->mensagem }}</div>
+                        <div class="email__info d-flex align-items-center justify-content-center" style="width: 30%;">
+                            <div class="email__info--data">
+                                <span><strong>{{$email->created_at->format('d');}}</strong></span>
+                                <span>{{$email->created_at->format('H:i');}}</span>
+                            </div>
+                            <div class="email__info--description">
+                                <p>Usuário: {{$email->name}} </p>
+                                <p>Para:  {{$email->email}}</p>
+                                <p><strong>{{$email->assunto}}</strong></p>
+                            </div>
+                        </div>
+                        <div class="email__info--content">
+                            <div class="row gx-5">
+                                <div class="col-6" style="background: #f8f8f8; padding:1%; border-rigth:1px solid #000">
+                                    <h5>Mensagem Enviada</h5>
+                                    <p>{{$email->mensagem}}</p>
+                                </div>
+                            </div>
+                        </div>
 
                 </div>
             </div>
