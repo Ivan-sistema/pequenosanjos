@@ -57,4 +57,15 @@ class EmailController extends Controller
         //return redirect()->route('dashboard.emails/novo_email')->with('success', 'E-mail enviado com sucesso');
         return view('dashboard.emails/emails', $data);
     }
+
+    public function read (string $id)
+    {
+        $data['user'] = auth()->user();
+        $data['profiles'] = Profile::all();
+        $data['emails'] = Email::all();
+        $data['email'] = Email::findOrFail($id);
+        $data['contacts'] = Contact::all();
+        return view('dashboard.emails/view_email', $data);
+
+    }
 }

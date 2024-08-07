@@ -97,7 +97,7 @@
                         </div>
                         <div class="col-6">
                             @foreach ($emails as $email)
-                                <a href="#" style="text-decoration: none; color: #000;">
+                                <a href="{{route('dashboard')}}/email/{{$email->id}}" style="text-decoration: none; color: #000;">
                                     <div class="email__info d-flex align-items-center justify-content-center">
                                         <div class="email__info--data">
                                             <span><strong>{{$email->created_at->format('d');}}</strong></span>
