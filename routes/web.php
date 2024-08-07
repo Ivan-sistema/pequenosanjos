@@ -63,6 +63,7 @@ Route::get('/dashboard/mensagem/{contatoId}', [DashboardController::class, 'read
 Route::get('dashboard/emails', [EmailController::class, 'all_email'])->name('all_email');
 Route::post('dashboard/emails', [EmailController::class, 'store'])->name('email.store');
 Route::get('dashboard/novo-email', [EmailController::class, 'new_email'])->name('new_email');
+Route::get('dashboard/email/{emailId}', [EmailController::class, 'read'])->name('email.read');
 
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
